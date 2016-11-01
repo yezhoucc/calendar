@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>日历插件</title>
+        <style>*{margin: 0;padding: 0;} body{padding:50px} </style>
+	</head>
+	<body>
+
+    <div>jQuery时间段日历选择插件</div>
+    <link rel="stylesheet" href="dateRange/jQuery.pickerDateRange.css" />
+    <script type="text/javascript" src="dateRange/jquery.min.js"></script>
+    <script type="text/javascript" src="dateRange/jQuery.pickerDateRange.js"></script>
+
+   <input type="text" placeholder="请选择投放时间段"  id="dateRange" >
+    <script type="text/javascript">
+        var dateRange = new pickerDateRange('dateRange', {
+            defaultText : ' 至 ', //选择日期分隔字
+            stopToday : false,	//今天之后不可选
+            stopTodayBefore:false,//今天之前不可选
+            isTodayValid:true,	//点击今天是否可选
+            shortOpr: false,        //结合单选日历选择的短操作，不需要确定和取消的操作按钮。
+            isSingleDay : false,  //是否单选日历
+            calendars:2, //日历数量
+             // shortbtn:1,//是否显示快捷操作
+             // startDate:'2016-06-01', //默认开始时间
+             // endDate:'2016-12-01',	//默认结束时间
+            inputTrigger : 'dateRange',	 //触发日历的input id
+            success :function(obj) {  //选择日期后的回调函数
+                console.log(obj)
+            }
+        });
+    </script>
+
+	</body>
+</html>
